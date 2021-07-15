@@ -1,5 +1,11 @@
 # ML for Trading - 2<sup>nd</sup> Edition
 
+돌리는 순서를 알려드리겠습니다. 
+
+1. 우선 [아나콘다](https://www.anaconda.com/products/individual)를 먼저 설치하셔야 됩니다. 
+2. installation 폴더에 들어가서 각 PC에 맞는 ml4t 가상환경을 설치 하셔야 됩니다.
+3. data 폴더에 들어가서 주피터파일을 다 실행시켜서 data를 생성 해줘야 됩니다.
+
 This [book](https://www.amazon.com/Machine-Learning-Algorithmic-Trading-alternative/dp/1839217715?pf_rd_r=GZH2XZ35GB3BET09PCCA&pf_rd_p=c5b6893a-24f2-4a59-9d4b-aff5065c90ec&pd_rd_r=91a679c7-f069-4a6e-bdbb-a2b3f548f0c8&pd_rd_w=2B0Q0&pd_rd_wg=GMY5S&ref_=pd_gw_ci_mcx_mr_hp_d) aims to show how ML can add value to algorithmic trading strategies in a practical yet comprehensive way. It covers a broad range of ML techniques from linear regression to deep reinforcement learning and demonstrates how to build, backtest, and evaluate a trading strategy driven by model predictions.  
 
 In four parts with **23 chapters plus an appendix**, it covers on **over 800 pages**:
