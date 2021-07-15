@@ -1,6 +1,6 @@
-# Installation instructions
+# 설치 방법
 
-> Update April 25, 2021: The [new Zipline version](https://github.com/stefan-jansen/zipline-reloaded) permits running the backtest notebooks without Docker on all operating systems; the installation instructions now refer to Windows/MacOS/Linux environment files.  
+> 2021년 4월 25일 업데이트:  [새로운 Zipline 버전](https://github.com/stefan-jansen/zipline-reloaded) 에서는 모든 운영 체제에서 도커 없이 백테스트 노트북을 실행할 수 있습니다.; 설치 지침은 이제 Windows/MacOS/Linux 환경 파일을 참조 하시면 됩니다.
 
 > Update March 14, 2021: I have just released a [new Zipline version](https://github.com/stefan-jansen/zipline-reloaded) that runs on Python 3.7-3.9; see [release info](https://github.com/stefan-jansen/zipline-reloaded/releases/tag/2.0.0rc4) and [docs](https://zipline.ml4trading.io/). As a result, the Docker solution will no longer be necessary going forward and I will provide new environment files over the course of April.
 
@@ -10,11 +10,11 @@
 > To update the Docker image to the latest version, run:
 > ```docker pull appliedai/packt:latest```
 
-This book uses Python 3.8 and various ML- and trading-related libraries that can be installed:
+이 책에서는 다음과 같이 설치할 수 있는 Python 3.8과 다양한 ML 및 거래 관련 라이브러리를 사용합니다.:
 
-1. Using [mamba](https://github.com/mamba-org/mamba) in [conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) based on the [Miniconda](https://docs.conda.io/en/latest/miniconda.html) distribution and the provided `ml4t.yml` environment files,
-2. For macOS and Linux only: via [pip](https://pip.pypa.io/en/stable/) in a Python virtual environment created with, e.g., [pyenv](https://github.com/pyenv/pyenv) or [venv](https://docs.python.org/3/tutorial/venv.html) using the provided `ml4t.txt` requirement files.
-3. Deprecated: using [Docker](https://www.docker.com/) Desktop to pull an image from [Docker Hub](https://www.docker.com/products/docker-hub) and create a local container with the requisite software to run the notebooks. 
+1.  [mamba](https://github.com/mamba-org/mamba)를 사용해서 [conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) 은  [Miniconda](https://docs.conda.io/en/latest/miniconda.html)를 기반으로  `ml4t.yml` 가상환경 설정 파일을 제공합니다.
+2. Mac과 Linux 사용자들은 : via [pip](https://pip.pypa.io/en/stable/) Python venv를 이용해서, [pyenv](https://github.com/pyenv/pyenv) or [venv](https://docs.python.org/3/tutorial/venv.html)  `ml4t.txt` requirement files을 사용해서 설치.
+3. [Docker](https://www.docker.com/)를 사용 [Docker Hub](https://www.docker.com/products/docker-hub)에서 이미지를 pull해야 되고 노트북을 실행하는 데 필요한 소프트웨어가 포함된 로컬 컨테이너를 생성합니다.
 
 We'll describe how to obtain the source code and then lay out the first two options in turn. Then, we address how to work with [Jupyter](https://jupyter.org/) notebooks to view and execute the code examples. Finally, we list the legacy Docker installation instructions.
 
