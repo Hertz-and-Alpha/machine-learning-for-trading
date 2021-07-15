@@ -18,20 +18,20 @@
 
 We'll describe how to obtain the source code and then lay out the first two options in turn. Then, we address how to work with [Jupyter](https://jupyter.org/) notebooks to view and execute the code examples. Finally, we list the legacy Docker installation instructions.
 
-## Sourcing the code samples
+## 코드 샘플
 
-You can work with the code samples by downloading a compressed version of the [GitHub repository](https://github.com/stefan-jansen/machine-learning-for-trading), or by [cloning](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/) its content. The latter will result in a larger download because it includes the commit history. 
+[GitHub repository](https://github.com/stefan-jansen/machine-learning-for-trading), 이나 [cloning](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/) 의 압축 버전을 다운로드하여 코드 샘플 작업을 수행할 수 있습니다. 후자는 커밋 기록을 포함하므로 다운로드 횟수가 더 많아집니다.
+또는 리포트의 [fork](https://guides.github.com/activities/forking/) 를 생성하고 해당 컨텐츠를 복제한 후 계속 개발할 수 있습니다.
 
-Alternatively, you can create a [fork](https://guides.github.com/activities/forking/) of the repo and continue to develop from there after cloning its content.
-
-To work with the code locally, do the following:
-1. Select a file system location where you would like to store the code and the data.
-2. Using the `ssh` or `https` links or the download option provided by the green `Code` button on the [GitHub repository](https://github.com/stefan-jansen/machine-learning-for-trading), either clone or unzip the code to the target folder.
-    - To clone the starter repo, run `git clone https://github.com/stefan-jansen/machine-learning-for-trading.git` and change into the new directory.
-    - If you cloned the repo and did not rename it, the root directory will be called `machine-learning-for-trading`, the ZIP the version will unzip to `machine-learning-for-trading-master`.
-
+로컬로 코드를 실행시키려면 다음을 실행:
+1. 코드와 데이터를 저장할 파일 시스템 위치를 선택합니다.
+2. [GitHub 저장소](https://github.com/stefan-jansen/machine-learning-for-trading),에서 로그인 후 깃허브 레파지토리에서 다운로드 옵션을 사용하여 코드를 복제하거나 대상 폴더에 압축을 풉니다.
+    - 코드를 복제하려면 CMD에서 git clone https://github.com/stefan-jansen/machine-learning-for-trading.git을 실행하고 새 디렉토리로 변경합니다. (깃허브가 없으시면 설치하세요!!)
+    - 리포트를 복제하고 이름을 바꾸지 않은 경우 루트 디렉토리의 이름은 `machine-learning-for-trading`, the 이고 ZIP은 `machine-learning-for-trading-master`로 압축 해제됩니다.
    
-## How to install the required libraries using `conda` environments
+   
+   
+## `conda`를 이용해서 필수 패키지 설치 
 
 The instructions rely on Anaconda's [miniconda](https://docs.conda.io/en/latest/miniconda.html) distribution, the [mamba](https://github.com/mamba-org/mamba) package manager to facilitate dependency management, and OS-specific environment files at `installation/[windows|macos|linux]/ml4t.yml` with pinned library versions. 
 
