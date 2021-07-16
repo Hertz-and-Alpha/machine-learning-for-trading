@@ -33,26 +33,26 @@ We'll describe how to obtain the source code and then lay out the first two opti
    
 ## `conda`를 이용해서 필수 패키지 설치 
 
-The instructions rely on Anaconda's [miniconda](https://docs.conda.io/en/latest/miniconda.html) distribution, the [mamba](https://github.com/mamba-org/mamba) package manager to facilitate dependency management, and OS-specific environment files at `installation/[windows|macos|linux]/ml4t.yml` with pinned library versions. 
+환경세팅은 아나콘다에 의존한다 [miniconda](https://docs.conda.io/en/latest/miniconda.html),  [mamba](https://github.com/mamba-org/mamba)는 패키지 매니징을 쉽게 해준다, 운영 체제마다 가상환경 생성 파일은 `installation/[windows|macos|linux]/ml4t.yml` 에 고정된 라이브러리 버전을 이용한다. 
 
-Alternatively, there is also an environment file `installation/ml4t-base.yml` that only contains a list of the required libraries without dependencies; if you use this file instead you will obtain the latest versions - just be aware that at some point more recent software may become incompatible with the examples.
 
-You could also just install the packages required for the notebooks you are interested in; the most recent versions (as of March 2021) should work.
+또는 환경 파일 `installation/ml4t-base.yml` 에는 종속성이 없는 필수 라이브러리 목록만 포함되어 있습니다. 대신 이 파일을 사용하면 최신 버전을 사용할 수 있습니다. 어느 시점에서는 최신 소프트웨어가 예시와 호환되지 않을 수 있습니다.
 
-### Install miniconda
+관심 있는 노트북에 필요한 패키지만 설치하면 됩니다. 2021년 3월 최신 버전이 적용됩니다.
 
-The notebooks rely on a single virtual environment based on [miniconda3](https://docs.conda.io/en/latest/miniconda.html) that you need to install first. 
 
-You can find detailed instructions for various operating systems [here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
+노트북은 먼저 설치해야 하는 [miniconda3](https://docs.conda.io/en/latest/miniconda.html)을 기반으로 하는 단일 가상 환경에 의존합니다.
 
-### Create a conda environment from an environment file
+다양한 운영 체제에 대한 자세한 지침은 [여기](https://conda.io/projects/conda/en/latest/user-guide/install/index.html)에서 확인할 수 있습니다.
 
-[conda] is the package manager provided by the [Anaconda](https://www.anaconda.com/) python distribution. Unfortunately, it is currently [not in very good shape](https://github.com/conda/conda/issues/9707). Instead, we'll use the more recent and much faster [mamba](https://github.com/mamba-org/mamba) package manager to install packages. You can install it using:
+### Environment file을 이용해서 Conda 가상환경 생성
+
+[conda]는 [Anaconda](https://www.anaconda.com/) python 배포에서 제공하는 패키지 관리자입니다. 아쉽지만, 현재 문제가 있습니다 [not in very good shape](https://github.com/conda/conda/issues/9707). 대신에, [mamba](https://github.com/mamba-org/mamba)를 이용해서 패키지를 설치 할 수 있습니다. 아나콘다 prompt에서 아래 명령어를 실행 시킵니다:
 ```python
 conda install -n base -c conda-forge mamba
 ```
 
-To create a [virtual environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) with the latest versions of the libraries used in the notebooks (as of April 2021), you just need to run one of the following options (depending on your operating system) from the command line in the root directory of the cloned repo:
+[가상환경](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) 을 생성하려면 밑에 코드중에서 자신에 맞는 OS에 따라 코드를 실행시키면 됩니다. (e.g 윈도우이면 `mamba env create -f installation/windows/ml4t.yml` 실행
 
 ```bash
 mamba env create -f installation/windows/ml4t.yml 
@@ -60,44 +60,45 @@ mamba env create -f installation/macosx/ml4t.yml
 mamba env create -f installation/linux/ml4t.yml 
 ```
 
-See also [here](https://towardsdatascience.com/getting-started-with-python-environments-using-conda-32e9f2779307) for a more detailed tutorial on virtual environments.
+가상 환경에 대한 자세한 설명은 [여기](https://towardsdatascience.com/getting-started-with-python-environments-using-conda-32e9f2779307)를 참조하십시오.
 
-If you want to create a new environment with the latest library versions as of whenever you read this, run
+만약 최신 라이브러리로 생성을 원하면 아래 코드를 실행시키세요.
 
 ```bash
 conda env create -f installation/ml4t-base.yml
 ```
 
-### Activate conda environment
+### Conda 가상환경 실행
 
-After you've create it, you can activate the environment using its name, which in our case is `ml4t`:
+생성 후 이름을 사용하여 환경을 활성화할 수 있습니다. 이 이름은`ml4t` 입니다:
 
 ```bash
 conda activate ml4t
 ```
 
-To deactivate, simply use
+가상환경을 종료시키고 싶으면 아래 코드를 실행시키세요
+
 
 ```bash
 conda deactivate
 ```
 
-## Installing the libraries using pip
+## pip을 사용하여 라이브러리 설치
 
-You should install the required libraries in a [virtual environment](https://realpython.com/python-virtual-environments-a-primer/). See the docs for the built-in [venv](https://docs.python.org/3/library/venv.html) option, or the [pyenv](https://github.com/pyenv/pyenv) alternative that allows you to run multiple Python versions in parallel.
+[가상 환경](https://realpython.com/python-virtual-environments-a-primer/)에 필요한 라이브러리를 설치해야 합니다. 여러 Python 버전을 병렬로 실행할 수 있는 기본 제공 [venv](https://docs.python.org/3/library/venv.html) 옵션 또는 [pyenv](https://github.com/pyenv/pyenv)를 참조하십시오.
 
-Several of the libraries require previous installation of OS-specific software, which may depend on the state of your machine. We list a few common cases below. Should you encounter other problems, please consult the documentation for the library causing the issue. In case this does not resolve the matter, please raise an issue on our GitHub so we can take a look and update the instructions here accordingly.  
+일부 라이브러리에서는 시스템 상태에 따라 달라질 수 있는 OS별 소프트웨어를 이전에 설치해야 합니다. 아래에 몇 가지 일반적인 사례가 나열되어 있습니다. 다른 문제가 발생하는 경우 해당 문제의 원인이 되는 라이브러리에 대한 설명서를 참조하십시오. 이 방법으로 문제가 해결되지 않는 경우, GitHub에 문제를 제기하여 여기에 따라 지침을 확인하고 업데이트하십시오.
 
-### Pre-requisites: MacOS
+### MacOS: 사전 준비 사항
 
-Installation for MacOS requires the following libraries that can be installed via [homebrew](https://brew.sh/):
+MacOS를 설치하려면 [homebrew](https://brew.sh/)를 통해 설치할 수 있는 다음 라이브러리가 필요합니다.
 ```bash
 brew install lightgbm swig xz ta-lib
 ```
 
-### Pre-requisites: Linux
+### Linux: 사전 준비 사항
 
-On Ubuntu, pre-requisites can be fulfilled via `apt`. For TA-Lib, the [necessary steps](https://artiya4u.medium.com/installing-ta-lib-on-ubuntu-944d8ca24eae) are:
+Ubuntu 경우, `apt`를 사용할 수 있어야 된다. For TA-Lib, the [necessary steps](https://artiya4u.medium.com/installing-ta-lib-on-ubuntu-944d8ca24eae) are:
 
 ```bash
 # nstall the build tool
@@ -116,29 +117,28 @@ make
 sudo make install
 ```
 
-### Installing the requirements
+### 요구 사항 설치
 
-Assuming you have created and activated a virtual environment, you just need to run (depending on your OS):
+가상 환경을 생성하고 활성화했 OS에 따라 다음을 실행하면 됩니다.
 ```bash
 pip install -U pip setuptools wheel
 pip install -r installation/macosx/ml4t.txt # for macOS
 pip install -r installation/linux/ml4t.txt # for Ubuntu
 ```
 
-## Post-installation instructions
+## 설치 후 해야될 것들
 
+### QUANDL API Key 발급
 
-### Get a QUANDL API Key
+다음 단계에서 책 전반에 걸쳐 몇 가지 예시로 사용할 미국 주식 데이터를 다운로드하려면 [register](https://www.quandl.com/sign-up)을 통해 개인 Quandl 계정을 통해 API 키를 얻으십시오. [프로파일](https://www.quandl.com/account/profile) 페이지에 표시됩니다.
 
-To download US equity data that we'll be using for several examples throughout the book in the next step, [register](https://www.quandl.com/sign-up) for a personal Quandl account to obtain an API key. It will be displayed on your [profile](https://www.quandl.com/account/profile) page.
+Mac OSX와 같은 UNIX 기반 시스템에 있는 경우 QUANDL_API_KEY와 같은 환경 변수에 API 키를 저장할 수 있습니다. `export QUANDL_API_KEY=<your_key>`를 컴퓨터에 있는 `.bash_profile`.  에 추가
 
-If you are on a UNIX-based system like Mac OSX, you may want to store the API key in an environment variable such as QUANDL_API_KEY, e.g. by adding `export QUANDL_API_KEY=<your_key>` to your `.bash_profile`.  
-
-### Ingesting Zipline data
+###  Zipline data 넣기
 
 To run Zipline backtests, we need to `ingest` data. See the [Beginner Tutorial](https://zipline.ml4trading.io/beginner-tutorial.html) for more information. 
 
-Per default, Zipline stores data in your user directory under `~/.zipline` directory. 
+기본적으로 Zipline은 아래의 사용자 `~/.zipline` 디렉토리에 데이터를 저장합니다  
 
 From the command prompt, activate your `ml4t` virtual environment and run:
 ```bash
